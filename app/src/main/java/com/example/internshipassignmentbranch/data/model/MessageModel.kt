@@ -1,4 +1,4 @@
-package com.example.internshipassignmentbranch.data.Model
+package com.example.internshipassignmentbranch.data.model
 
 data class MessagesModel(
     val id: Int,
