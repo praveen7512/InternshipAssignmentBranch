@@ -12,9 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.internshipassignmentbranch.data.network.ApiService
-import com.example.internshipassignmentbranch.navigation.Destinations
-import com.example.internshipassignmentbranch.screens.LoginScreen
+import com.example.internshipassignmentbranch.api.ApiService
+import com.example.internshipassignmentbranch.data.model.LoginRequest
 //import com.example.internshipassignmentbranch.screens.LoginScreen
 import com.example.internshipassignmentbranch.ui.theme.InternshipAssignmentBranchTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,7 +37,8 @@ class MainActivity : ComponentActivity() {
                 ) {
                    LaunchedEffect(true){
                        try {
-                           Log.d("praveen", apiService.getPosts().toString())
+                           val token =apiService.login(LoginRequest("praveen.sahu7512@gmail.com","moc.liamg@2157uhas.neevarp")).body().toString()
+                           Log.d("praveen",token )
                        } catch (e: Exception) {
                            Log.d("errorhai", e.toString())
                        }
