@@ -13,7 +13,7 @@ import retrofit2.http.POST
 interface ApiService {
 
     @GET(AppConstants.MESSAGES_URL)
-    suspend fun getMessages() : Response<MessagesModel>
+    suspend fun getMessages() : Response<List<MessagesModel>>
 
     @POST(AppConstants.LOGIN_URL)
     suspend fun login(@Body loginDetails: LoginRequest) : Response<TokenInfo>
